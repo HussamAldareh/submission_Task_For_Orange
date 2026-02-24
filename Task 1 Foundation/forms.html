@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>User Registration Form</title>
+  </head>
+  <body>
+    <h1>User Registration Form</h1>
+
+    <form>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" /><br /><br />
+
+      <label for="dob">Date of Birth:</label><br />
+      <input type="date" id="dob" name="dob" /><br /><br />
+
+      <label for="profile">Profile Picture:</label><br />
+      <input type="file" id="profile" name="profile" /><br /><br />
+
+      <button type="submit">Submit</button>
+
+      <hr />
+
+      <h2>User Preferences</h2>
+<form>
+      <label for="about">About Me:</label><br />
+      <textarea id="about" name="about" rows="4" cols="40"></textarea>
+      <br /><br />
+
+      <label for="country">Country:</label><br />
+      <select id="country" name="country">
+        <option value="jordan">Jordan</option>
+        <option value="saudi">Saudi Arabia</option>
+        <option value="egypt">Egypt</option>
+      </select>
+      <br /><br />
+
+      <fieldset>
+        <legend>Contact Preference</legend>
+
+        <input type="radio" id="contact-email" name="contact" value="email" />
+        <label for="contact-email">Email</label><br />
+
+        <input type="radio" id="contact-phone" name="contact" value="phone" />
+        <label for="contact-phone">Phone</label>
+      </fieldset>
+
+      <br />
+      <button type="submit">Save Preferences</button>
+    </form>
+    <hr />
+    <h2>Email Submission Form</h2>
+
+    <form
+      action="https://example.com/submit"
+      method="POST"
+      target="_blank"
+      autocomplete="off"
+    >
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Survey Form</h2>
+
+    <form>
+      <label for="username">Username:</label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        maxlength="10"
+        required
+      />
+      <br /><br />
+
+      <label for="age">Age:</label><br />
+      <input type="number" id="age" name="age" min="18" max="60" />
+      <br /><br />
+
+      <label for="language">Favorite Programming Language:</label><br />
+      <input type="text" id="language" name="language" list="languages" />
+
+      <datalist id="languages">
+        <option value="HTML"></option>
+        <option value="CSS"></option>
+        <option value="JavaScript"></option>
+        <option value="Python"></option>
+      </datalist>
+
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
