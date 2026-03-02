@@ -1,0 +1,21 @@
+
+body{
+
+
+    background-color: #FFFECD;
+}
+.div1{
+
+background-color: white;
+width: 70%;
+height: 200px;
+border: 1px solid gray ;
+text-align: justify ;
+justify-self: start;
+margin-top: 35px;
+}
+#pp{
+
+color: rgba(255, 0, 0, 0.773);
+border: 1px dotted rgba(255, 0, 0, 0.738);
+}
