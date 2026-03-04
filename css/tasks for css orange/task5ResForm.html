@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#3c8dbc;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* ===== CARD ===== */
+
+.card{
+  background:white;
+  width:400px;
+  padding:40px;
+  border-radius:5px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card h1{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:gray;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.row{
+  display:flex;
+  gap:10px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:3px;
+}
+
+.checkbox{
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#3c8dbc;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+.bottom-text{
+  text-align:center;
+  margin-top:15px;
+  color:white;
+}
+
+.bottom-text a{
+  color:white;
+  text-decoration:underline;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:992px){
+  .card{
+    width:90%;
+  }
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:576px){
+
+  body{
+    padding:20px;
+  }
+
+  .row{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div>
+  <div class="card">
+
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account!</p>
+
+    <div class="row">
+      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="Last Name">
+    </div>
+
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <input type="password" placeholder="Confirm Password">
+
+    <div class="checkbox">
+      <input type="checkbox"> I accept the Terms of Use & Privacy Policy.
+    </div>
+
+    <button>Sign Up</button>
+
+  </div>
+
+  <div class="bottom-text">
+    Already have an account? <a href="#">Login here</a>
+  </div>
+</div>
+
+</body>
+</html>

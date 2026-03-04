@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f4f4;
+}
+
+
+.nav{
+  background:#0b1f3a;
+  color:white;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
+
+
+.container{
+  max-width:900px;
+  margin:60px auto;
+  background:white;
+  padding:60px 40px;
+  text-align:center;
+}
+
+.container h1{
+  margin-bottom:10px;
+}
+
+.container p{
+  color:gray;
+  font-size:14px;
+}
+
+input{
+  width:60%;
+  padding:12px;
+  margin-top:30px;
+  border:1px solid #ccc;
+}
+
+
+.bottom{
+  background:#d8c6aa;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+
+@media (max-width:992px){
+
+  .container{
+    margin:40px 20px;
+  }
+
+  input{
+    width:80%;
+  }
+
+}
+
+
+@media (max-width:576px){
+
+  .nav{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .nav div{
+    margin-top:10px;
+  }
+
+  input{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div><strong>DOLLAR SHAVE CLUB</strong></div>
+  <div>
+    <a href="#">Shop</a>
+    <a href="#">Original Content</a>
+    <a href="#">Gift</a>
+    <a href="#">Account</a>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Contact Us</h1>
+  <p>Questions not answered yet? We are here to help!</p>
+
+  <input type="text" placeholder="How can we help you?">
+
+  <p style="margin-top:40px; font-size:13px;">Partnerships and Media Inquiries</p>
+</div>
+
+<div class="bottom">
+  <strong>Questions not answered?</strong><br>
+  Contact us
+</div>
+
+</body>
+</html>
