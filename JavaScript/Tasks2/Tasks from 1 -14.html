@@ -122,8 +122,47 @@ for (let i = 1; i <= 5; i++) {
 
     }
 
-    console.log("6"+row);
+    console.log(""+row);
 }
+
+
+
+
+for (let i = 1; i <= 5; i++) {
+
+    let row = "";
+
+    for (let j = 1; j <= 5; j++) {
+
+        if (i==j) {
+            row += "1 ";
+        } else {
+            row += "0 ";
+        }
+
+    }
+
+    console.log(""+row);
+}
+
+
+
+
+
+let first=0
+let sec=1
+document.write(first +"" + sec)
+for(i =0;i<=6;i++)
+{
+ new1=first+sec
+first=sec
+sec=new1
+document.write(new1)
+}
+
+
+document.write("<br>")
+
 
 let count =0
 let str="Orange coding school"
@@ -131,6 +170,47 @@ for(let ch of str)
 if(ch=='c')
 count+=1
 document.write( "10 )"+""+count)
+
+document.write("<br>")
+
+
+
+for(i=1;i<=5;i++)
+{
+
+for(j=1;j<=5;j++){
+
+
+
+document.write( i+ "*"+j+"=" +i*j )
+document.write("<br>")
+
+}
+
+document.write("<br>")
+
+
+}
+
+document.write("<br>")
+
+
+for (let i = 1; i <= 15; i++) {
+
+    document.write(i + " ");
+
+    if (i == 1 || i == 3 || i == 6 || i == 10 || i == 15) {
+        document.write("<br>");
+    }
+
+}
+
+
+
+
+
+
+
 
 document.write("<br>")
 
@@ -147,6 +227,9 @@ for(i=1;i<=100;i++)
 if(i%2!=0)
  sum4+=i
 document.write(sum4)
+
+
+
 </script>
 
 
