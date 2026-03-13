@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<script>
+
+
+let squ =0
+for (i=1;i<=10;i++)
+{
+
+squ=i*i
+document.write(squ+"-")
+
+}
+
+
+document.write("<br>")
+document.write("<hr>")
+
+for(i=1;i<=30;i++)
+{
+
+if(i%3 ==0)
+document.write("Fizz")
+else if(i%5==0)
+document.write("Buzz")
+else if(i%3 ==0&& i%5==0)
+document.write("FizzBuzz")
+else
+document.write(i)
+
+
+
+}
+
+document.write("<br>")
+document.write("<hr>")
+
+
+
+
+
+for(i=1;i<=5;i++)
+{
+for(j=1;j<i+1;j++){
+
+document.write("*")
+
+}
+
+document.write("<br>")
+
+
+}
+
+
+for(i=5;i>=1;i--)
+{
+
+for(j=1;j<i+1;j++)
+{
+
+document.write("*")
+
+
+}
+document.write("<br>")
+
+
+}
+
+
+
+
+for(i=1;i<=5;i++){
+
+for(j=1;j<i+1;j++){
+document.write(j)
+}
+document.write("<br>")
+
+}
+
+
+
+document.write("<br>")
+
+
+
+
+for(i=1;i<=5;i++){
+
+for(j=1;j<=i;j++){
+
+document.write(i)
+
+
+}
+
+document.write("<br>")
+
+
+}
+
+document.write("<br>")
+
+
+
+for (i=1;i<=200;i++)
+{
+
+let ons=i%10;
+let sec=Math.floor(i/10);
+if(ons+sec==5)
+document.write(i +"-")
+
+
+}
+document.write("<br>")
+
+
+
+
+for (i=1;i<=100;i++)
+{
+
+let ons=i%10;
+let sec=Math.floor(i/10);
+if(ons<sec)
+document.write(i +"-")
+
+
+}
+
+
+
+document.write("<br>")
+document.write("<hr>")
+
+
+for (i=1;i<=100;i++)
+{
+
+let ons=i%10;
+let sec=Math.floor(i/10);
+if(ons ==sec)
+document.write(i +"-")
+
+
+}
+
+
+document.write("<br>")
+document.write("<hr>")
+
+
+    for (i=1;i<=300;i++)
+    {
+
+    let ons=i%10;
+    let sec=Math.floor(i/10);
+    if(i %(ons*sec) ==0)
+    document.write(i +"-")
+
+
+    }
+
+
+document.write("<br>")
+document.write("<hr>")
+
+
+    for (i=1;i<=300;i++)
+    {
+
+    let ons=i%10;
+    let sec=Math.floor(i/10);
+    if((ons+sec) == (ons*sec ))
+    document.write(i +"-")
+
+
+    }
+
+
+
+
+document.write("<br>")
+document.write("<hr>")
+
+
+    for (i=1;i<=500;i++)
+    {
+
+    let ons=i%10;
+    let sec=Math.floor(i/10);
+    let hand= Math.floor(i/100);
+    let reve= ons*100 +sec*10+hand;
+    
+    if(reve%3==0)
+    document.write(i +"-")
+
+
+    }
+
+document.write("<br>")
+document.write("<hr>")
+
+
+    for (i=1;i<=200;i++)
+    {
+
+    let ons=i%10;
+    let sec=Math.floor(i/10);
+    if((ons-sec) == 2)
+    document.write(i +"-")
+
+
+    }
+
+
+
+
+
+
+
+document.write("<br>")
+document.write("<hr>")
+
+
+    for (i=1;i<=200;i++)
+    {
+
+    let ons=i%10;
+    let sec=Math.floor(i/10);
+    if(sec+1 ==ons )
+    document.write(i +"-")
+
+
+    }
+
+
+
+
+document.write("<br>")
+document.write("<hr>")
+
+
+    for (i=1;i<=300;i++)
+    {
+
+    let ons=i%10;
+    let sec=Math.floor(i/10)%10;
+    let hand=Math.floor(i/100);
+    if(hand+sec==ons)
+    document.write(i +"-")
+
+
+    }
+
+document.write("<br>")
+document.write("<hr>")
+
+ for (i=1;i<=300;i++)
+    {
+
+    let ons=i%10;
+    let sec=Math.floor(i/10)%10;
+    if(sec+ons >10)
+    document.write(i +"-")
+
+
+    }
+
+
+document.write("<br>")
+document.write("<hr>")
+document.write("<hr>")
+document.write("<hr>")
+
+ for (i=1;i<=500;i++)
+    {
+let prime=true
+for(j=2;j<i;j++){
+if(i%j ==0)
+prime=false;
+break;
+}
+if(prime)
+document.write(i)
+    }
+
+document.write("<br>")
+document.write("<hr>")
+
+
+
+
+
+
+
+for(i=100;i<=300;i++)
+{
+
+let ons=i%10;
+let sec=Math.floor(i/10)%10;
+let hand=Math.floor(i/100)
+if((ons==sec &&ons!=hand)||
+
+(ons==hand&&ons!=sec)||
+(sec==hand&&sec!=ons)
+
+
+
+)
+document.write(i+"-")
+
+}
+
+document.write("<br>")
+document.write("<hr>")
+
+for (let i = 10; i <= 200; i++) {
+
+let ons = i % 10;
+let sec = Math.floor(i / 10) % 10;
+let hand = Math.floor(i / 100);
+
+let rev = ons*100 + sec*10 + hand;
+
+if (i < 100)
+    rev = ons*10 + sec;
+else
+    rev = ons*100 + sec*10 + hand;
+
+if (rev > i)
+document.write(i + "-");
+
+}
+
+
+
+
+document.write("<br>")
+document.write("<hr>")
+
+ for (i=1;i<=500;i++)
+    {
+
+    if(i%5==0)
+    document.write(i +"-")
+
+
+    }
+
+document.write("<br>")
+document.write("<hr>")
+
+for(i=1;i<=300;i++)
+{
+let ons = i % 10;
+let sec = Math.floor(i / 10) % 10;
+let hand = Math.floor(i / 100);
+ let sum=ons+sec+hand;
+ if(i<10){
+ sum=ons
+if(1*5==sum)
+document.write(i+"-")
+ }
+if(i<100){
+sum=ons+sec;
+if(2*5==sum)
+document.write(i+"-")
+}
+else if(i>=100){
+sum=hand+ons+sec;
+if(3*5==sum)
+document.write(i+"-")
+}
+
+
+}
+
+document.write("<br>")
+document.write("<hr>")
+for (let i = 1; i <= 500; i++)
+{
+let ons = i % 10;
+
+if (ons % 2 == 0)
+document.write(i + "-");
+}
+
+document.write("<br>")
+document.write("<hr>")
+
+
+for(i=1;i<=300;i++){
+
+let ons=i%10;
+let sec=Math.floor(i/10)%10;
+let hand=Math.floor(i/100)
+if(i<10){
+if((ons*ons)==ons)
+document.write(i+"-")}
+else if(i<100){
+if((ons*ons)==sec)
+document.write(i+"-")
+
+}
+if(i>=100){
+if(ons*ons==hand)
+document.write(i+"-")
+
+
+
+}
+
+
+
+}
+
+
+
+
+document.write("<br>")
+document.write("<hr>")
+for(i=1;i<=500;i++){
+let ons=i%10;
+let sec=Math.floor(i/10)%10;
+let hand=Math.floor(i/100)
+let sum=ons+sec+hand
+if(i<10){
+sum=ons
+if(sum%1==0)
+document.write(i+"-")
+}
+
+if(i<100&&i>=10){
+sum=ons+sec;
+if(sum%2==0)
+document.write(i+"-")
+}
+if(i>=100){
+sum=ons+sec+hand
+if(sum%3==0)
+document.write(i+"-")
+}
+
+}
+
+document.write("<br>")
+document.write("<hr>")
+
+for(i=1;i<=1000;i++)
+{
+
+let ons=i%10;
+let sec=Math.floor(i/10)%10;
+let hand=Math.floor(i/100)
+let sum=ons+sec+hand
+
+
+if(i<10){
+sum=ons
+if(sum==15)
+document.write(i+"-")
+}
+
+if(i<100&&i>=10){
+sum=ons+sec;
+if(sum==15)
+document.write(i+"-")
+}
+if(i>=100){
+sum=ons+sec+hand
+if(sum==15)
+document.write(i+"-")
+}
+
+
+
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
