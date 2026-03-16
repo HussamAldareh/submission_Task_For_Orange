@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+let arr1=[1,2,3,4,5]
+let arr2=[1,2,10,4,5]
+
+function Task1(arr1)
+{
+
+return [arr1.slice(0,1) [0],arr1.slice(arr1.length - 1)[0]]
+
+
+}
+console.log(Task1([1,2,3,4,5]))
+//-------------------------------------------------------------//
+
+
+function Task2Remov(arr1)
+{
+
+     arr1.splice(2,1)
+return arr1
+
+
+}
+console.log(Task2Remov(arr1));
+
+
+//-------------------------------------------------------------//
+
+function task3(arr1){
+
+[arr1[0], arr1[arr1.length - 1]] =
+  [arr1[arr1.length - 1], arr1[0]]
+return arr1
+
+}
+console.log(task3(arr1))
+document.write(task3(arr1))
+
+
+
+function task4addinmedil(arr1){
+
+arr1.splice(2,0,10);
+return arr1;
+
+ 
+}
+document.write(task4addinmedil(arr1))
+
+
+//-------------------------------------------------------------//
+
+document.write("<br>")
+
+
+function task5dub(arr1,arr2)
+{
+
+return arr1.concat(arr2)
+
+
+
+}
+
+
+document.write(task5dub(arr1,arr2))
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+function task7(){
+
+arr1.sort(function(a,b){return(b-a)})
+
+return arr1[1]
+
+}
+
+document.write(task7(arr1))
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+function task8(){
+
+arr1.sort(function(a,b){return(a-b)})
+
+return arr1[1]
+
+}
+
+document.write(task8(arr1))
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+let arr3 = [10,5,20,3,8,50];
+
+let res = arr3.filter(task9);
+
+function task9(value){
+  return value < 10
+}
+
+document.write(res)
+
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+let res1=arr3.filter(task10);
+
+function task10(Value)
+{
+
+
+return Value >=10
+
+}
+document.write(res1)
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+
+
+let arr4=[1,2,3,2,4,2];
+function task11(arr4,value){
+
+let re=arr4.filter(function(num){
+
+    return num==value
+}
+)
+return re.length
+}
+
+
+document.write(task11(arr4,2))
+
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+function task12(){
+
+return arr1.filter(function(num){
+
+return arr2.includes(num)
+
+
+}
+)
+
+}
+
+document.write(task12(arr1,arr2))
+
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+
+function task13(arr1,arr2){
+
+let a = arr1.filter(num => !arr2.includes(num))
+let b = arr2.filter(num => !arr1.includes(num))
+
+return a.concat(b)
+
+}
+
+console.log(task13(arr1,arr2))
+
+
+//-------------------------------------------------------------//
+
+
+let arr0=[1,2,3]
+let arr5=[3,4,5]
+function task14(arr0,arr5){
+ 
+let a = arr0.filter(num => !arr5.includes(num))
+let b = arr5.filter(num => !arr0.includes(num))
+
+return a.concat(arr5)
+
+}
+document.write(task14(arr0,arr5))
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+let arr7=[5,-2,10,-3,7]
+function task15(arr7){
+
+let result = arr7.filter(num => num >= 0)
+
+return result
+
+}
+document.write(task15(arr7))
+//-------------------------------------------------------------//
+document.write("<br>")
+
+let arr8=["alex","mohammad","ali","sara"]
+function task16(arr8){
+
+return arr8.filter(word => word.length > 4)
+
+}
+document.write(task16(arr8))
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+let arr9=["apple","banana","car","dog"]
+function task17(arr9){
+
+let res =arr9.filter(word => word.includes('a'))
+return res.length
+
+}
+document.write(task17(arr9))
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+
+function task18(arr9,length){
+
+return arr9.filter(world => world.length>4)
+
+
+}
+document.write(task18(arr9))
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+function task19(arr9,length){
+
+return arr9.filter(world => world.length>=6)
+
+
+}
+document.write(task19(arr9))
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+function task20(arr9,length){
+
+return arr9.filter(world => world.length<=3)
+
+
+}
+document.write(task20(arr9))
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+
+function sortByLength(arr){
+
+arr.sort(function(a,b){
+return a.length - b.length
+})
+
+return arr
+}
+
+console.log(sortByLength(["apple","hi","banana"]))
+let arr = [1, 2, 3, 4, 5, 6];
+
+function task22 (arr){
+
+
+let result = arr.filter((value, index) => index % 2 === 0);
+return result
+}
+console.log(task22(arr)); 
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+let arrs = [1, 2, 3, 4, 5, 6];
+
+function task23(arrs) {
+    let re1 = arrs.filter(num => num % 2 === 0);
+
+    let re2 = re1.reduce((acc, num) => acc + num, 0);
+
+    return re2;
+}
+
+
+document.write(task23(arrs));
+
+
+
+document.write("<br>")
+
+function task24(arrs) {
+    let re1 = arrs.filter(num => num % 2 != 0);
+
+    let re2 = re1.reduce((acc, num) => acc + num, 0);
+
+    return re2;
+}
+
+
+document.write(task24(arrs));
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+
+
+
+function reverseWithoutReverse(arr) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        result.unshift(arr[i]);
+    }
+    return result;
+}
+
+console.log(reverseWithoutReverse([1,2,3,4,5])); 
+
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+function findMissingNumber(arr) {
+    arr.sort((a,b) => a - b);
+    for (let i = 1; i <= arr.length+1; i++) {
+        if (!arr.includes(i)) {
+            return i;
+        }
+    }
+}
+
+console.log(findMissingNumber([1,2,3,5,6])); 
+// 4
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+
+function pairSum(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        let complement = target - arr[i];
+        if (arr.includes(complement)) {
+            return [arr[i], complement];
+        }
+    }
+    return null;
+}
+
+console.log(pairSum([2,7,11,15], 9)); 
+// [2,7]
+
+
+
+
+
+function rotateArray(arr, steps) {
+    steps = steps % arr.length; // للتأكد ما نتجاوز طول المصفوفة
+    return arr.slice(-steps).concat(arr.slice(0, arr.length - steps));
+}
+
+console.log(rotateArray([1,2,3,4,5], 2)); 
+// [4,5,1,2,3]
+
+
+
+//-------------------------------------------------------------//
+document.write("<br>")
+function chunkArray(arr,n){
+
+let result = []
+
+for(let i = 0; i < arr.length; i += n){
+
+result.push(arr.slice(i, i + n))
+
+}
+
+return result
+}
+
+console.log(chunkArray([1,2,3,4,5,6],2))
+
+//-------------------------------------------------------------//
+document.write("<br>")
+
+
+
+
+
+
+
+function groupByLength(arr){
+
+let result = {}
+
+arr.forEach(function(word){
+
+let len = word.length
+
+if(!result[len]){
+result[len] = []
+}
+
+result[len].push(word)
+
+})
+
+return result
+}
+
+console.log(groupByLength(["hi","cat","dog","apple"]))
+
+
+</script>
+
+    
+</body>
+</html>
