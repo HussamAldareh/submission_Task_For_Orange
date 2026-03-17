@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+console.log(a)
+var a=10
+// undfined    
+// Because the variable was defined after the print statement
+
+
+
+ //console.log(a1)
+let a1=10
+//This causes a ReferenceError, not undefined (unlike var).
+/* TDZ is the time between entering a scope and the actual declaration initialization.
+
+During TDZ, any access to the variable (let or const) will throw a ReferenceError */
+
+
+
+
+let x1=10
+
+function test() {
+console.log(x)
+let x1=20
+}
+
+test()
+
+
+//ReferenceError: Cannot access 'x' before initialization
+
+
+var x = 1
+
+function test() {
+  if (true) {
+    var x = 2
+  }
+  console.log(x)
+}
+
+test()
+console.log(x)
+
+
+
+for (var i=0;i<3;i++) {
+setTimeout(() =>console.log(i),0)
+}
+
+//3 3 3
+
+
+
+
+for (let i=0;i<3;i++) {
+setTimeout(() =>console.log(i),0)
+}
+
+
+// 0 1 2
+
+var a=1
+
+function outer() {
+var a=2
+
+function inner() {
+console.log(a)
+  }
+
+inner()
+}
+
+outer()
+
+
+// 2
+
+
+/*
+var a = 10
+let a = 20
+*/
+
+//  SyntaxError: Identifier 'a' has already been declared
+
+
+console.log(foo)
+
+var foo=10
+
+function foo() {
+return 20
+}
+
+// function foo() { return 20 }
+
+/*
+
+let a3 = 10
+
+function test() {
+  a3 = 20
+}
+
+test()
+console.log(a3)
+
+// output is 20 but here the out put is error 
+*/
+
+
+
+
+{
+var a=10
+}
+
+console.log(a)
+
+
+/*
+{
+  let a = 10
+}
+
+console.log(a)
+
+ReferenceError: a is not defined
+*/
+
+
+
+
+
+
+leta=5
+
+function test(a) {
+console.log(a)
+}
+
+test(10)
+
+// 10 
+
+
+
+
+
+
+function test() {
+for (var i=0;i<3;i++) {
+setTimeout(() =>console.log(i),100)
+  }
+}
+
+test()
+
+//12 3
+
+
+
+
+
+
+
+
+
+
+
+        for (var i=0;i<3;i++) {
+  (function(i) {
+setTimeout(() =>console.log(i),0)
+  })(i)
+}
+
+//the output is (0,1,2)
+
+
+
+
+    </script>
+</body>
+</html>
