@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+let num=[1,2,3]
+
+function doubleNumbers(num){
+let res=num.map(num => num*2)
+return res
+}
+console.log(doubleNumbers(num))
+
+let char=[1,2,3]
+function numbersToStrings(char)
+{
+let res1=char.map(char => char.toString())
+return res1
+}
+console.log(numbersToStrings(char))
+
+
+let small=["ali","sara"]
+
+function upperCaseNames(small){
+let Upper=small.map(small => small.toUpperCase())
+return Upper;
+}
+console.log(upperCaseNames(small))
+
+
+let arr=[10,20,30]
+
+function addFive (arr){
+ 
+    let res=arr.map(arr => arr +5);
+    return res
+}
+console.log(addFive(arr))
+
+
+
+let users = [
+ {name:"Ali", age:22},
+ {name:"Sara", age:25},
+ {name:"Omar", age:30}
+];
+function getNames(users){
+let names=users.map(users => users.name);
+return names;
+}
+
+console.log(getNames(users))
+
+
+let le=["Apple","dog"];
+function wordLengths(le){
+
+ return le.map(le => le.length)
+}
+console.log(wordLengths(le))
+
+function valTimesIndex(arr ){
+
+  return arr.map((value, index) => value * index);
+
+
+}
+console.log(valTimesIndex(arr))
+
+
+let user1=[
+{userName:"Ahmad "},
+{userName:"sara"}
+];
+
+function makeUsernames (user1){
+
+return user1.map(s => "@"+s.userName)
+
+}
+
+
+console.log(makeUsernames   ([
+{userName:"Ahmad "},
+{userName:"sara"}
+]))
+
+
+let arr1=[2,3,4]
+ function squar(arr1){
+
+return arr1.map(s=> s*s)
+
+
+ }
+console.log(squar(arr1))
+
+
+
+
+
+function firstl(small){
+
+return small.map(s=> s.slice(0,1))
+
+
+}
+console.log(firstl(small))
+
+
+let arr2=[10,20,30]
+
+function sumNumbers(arr2){
+let  sum=0
+let r=  arr2.forEach(num => {
+console.log(sum+=num)    
+});
+
+ return sum
+
+}
+console.log(sumNumbers(arr2))
+
+
+
+let even=[1,2,3,4]
+let count =0
+function countEven(even){
+
+let ev= even.forEach(num =>{
+if(num%2==0)
+count ++
+
+})
+
+return count
+
+}
+ console.log(countEven(even))
+
+
+ let timesTen=[1,2,3]
+ function timesten(timesTen){
+
+
+return timesTen.map(n=> n*10);
+
+ }
+
+console.log(timesten(timesTen))
+
+
+let addAdult=[
+  {name:"Ali",age:20},
+ {name:"Sara",age:15}
+  ];
+
+  function addAdu(addAdult){
+
+ return addAdult.map(s=>{ 
+    if(s.age>18){
+    return {...s, adult: true};
+
+    }
+    else{
+
+        return {...s, adult: false};
+
+    }
+
+
+  })
+
+  }
+  console.log(addAdu(addAdult));
+
+
+
+let add=[100,200]
+function addtax(add){
+
+return add.map(s=> s*10)
+
+
+
+}
+console.log(addtax(add))
+
+let gretthan = [20,60,80];
+
+function countBig(arr){
+  let count = 0;
+
+  arr.forEach(s => {
+    if (s > 50) {
+      count++;
+    }
+  });
+
+  return count;
+}
+
+console.log(countBig(gretthan));
+
+
+
+let labl=[5,10]
+
+function labelNumbers(labl){
+
+return labl.map(s=> "Numbers :" +s)
+}
+console.log(labelNumbers(labl))
+
+
+
+let pro=[
+  {product:"Laptop",price:1000},
+  {product:"Phone",price:500}
+ ]
+
+ function productNames(pro){
+
+return pro.map(p=> p.product)
+
+
+ }
+console.log(productNames(pro))
+
+
+
+function iaddindex(labl){
+return labl.map((Element,index) => Element +index)
+
+
+
+
+}
+
+console.log(iaddindex(labl))
+
+
+
+let ec=[1,2,3,4]
+function EvenArray(ec){
+
+return ec.map(s=> s%2==0 ) 
+
+
+}
+console.log(EvenArray(ec))
+
+</script>
+</body>
+</html>
