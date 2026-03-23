@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+
+
+let arr1=[
+  { event:"click", time:1 },
+  { event:"click", time:2 },
+  { event:"scroll", time:3 },
+  { event:"scroll", time:4 },
+  { event:"click", time:5 }
+]
+
+let arr2=[]
+let count =1
+let opj={event :"",count :""}
+for (i=0;i<arr1.length;i++){
+   if (i < arr1.length - 1 && arr1[i].event == arr1[i+1].event){
+    count ++
+}
+else{
+
+    arr2.push({
+      event: arr1[i].event,
+      count: count
+    });
+
+
+count=1
+
+}
+
+
+
+
+}
+
+console.log(arr2)
+
+
+
+
+
+//--------------------------------------------------------------
+  
+  let arr=[1,4,20,3,10,5]
+let target =33
+let start =0
+let end =0
+  for(i=0;i<arr.length;i++)
+  {
+  let sum =0
+
+  for(j=i;j<arr.length;j++)
+
+  {
+    sum=sum+ arr[j]
+
+
+if(sum==target){
+start=i
+end =j
+  break;
+
+}else if(sum>target) { 
+break;
+
+
+}
+
+    
+  }
+
+  }
+
+
+console.log( "Start "+start,"End "+end)
+
+
+//-------------------------------------------------------------------
+
+
+
+
+
+
+let arr3=[7,1,5,3,6,4]
+let maxpro=0
+let minipri=arr3[0]
+for(i=0;i<arr3.length;i++){
+  let profet=arr3[i]-minipri
+
+if(arr3[i]<minipri)
+minipri=arr3[i]
+
+else
+if(maxpro<profet)
+maxpro=profet
+
+
+
+}
+
+console.log(maxpro)
+
+
+
+
+//-------------------------------------------------------------------
+
+
+let arr5=[1,2,3,1,2,3,4,5]
+function task5LongSup(arr5) {
+    let start = 0;
+    let maxLength = 0;
+    let bestStart = 0;
+
+    for (let i = 0; i < arr5.length; i++) {
+
+        for (let k = start; k < i; k++) {
+            if (arr5[i] === arr5[k]) {
+                start = k + 1;
+                break;
+            }
+        }
+
+        let length = i - start + 1;
+
+        if (length > maxLength) {
+            maxLength = length;
+            bestStart = start;
+        }
+    }
+
+    let result = [];
+
+    for (let i = bestStart; i < bestStart + maxLength; i++) {
+        result.push(arr5[i]);
+    }
+
+    return result;
+}
+
+console.log(task5LongSup(arr5));
+
+//--------------------------------------------------------------
+
+let arr6=[
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+]
+
+
+function SpiralMatrixTraversal(arr6){
+let res1 = []
+let top = 0
+let bottom = arr6.length - 1
+let left = 0
+let right = arr6[0].length - 1
+
+while(top <= bottom && left <= right){
+
+    // ➡️ يمين
+    for(let col = left; col <= right; col++){
+        res1.push(arr6[top][col])
+    }
+    top++
+
+    // ⬇️ تحت
+    for(let row = top; row <= bottom; row++){
+        res1.push(arr6[row][right])
+    }
+    right--
+
+    // ⬅️ يسار
+    if(top <= bottom){
+        for(let col = right; col >= left; col--){
+            res1.push(arr6[bottom][col])
+        }
+        bottom--
+    }
+
+    // ⬆️ فوق
+    if(left <= right){
+        for(let row = bottom; row >= top; row--){
+            res1.push(arr6[row][left])
+        }
+        left++
+    }
+}
+console.log(res1)
+}
+SpiralMatrixTraversal(arr6)
+
+
+
+</script>
+
+
+</body>
+</html>
