@@ -200,6 +200,49 @@ while(top <= bottom && left <= right){
 console.log(res1)
 }
 SpiralMatrixTraversal(arr6)
+//--------------------------------------------------
+
+
+
+let arrt6=[1,2,3,4]
+
+let right=[]
+let left=[]
+function task6(arrt6){
+let ret=[]
+
+ right[arrt6.length-1] = 1
+
+for(let i = arrt6.length - 2; i >= 0; i--){
+    right[i] = right[i+1] * arrt6[i+1]
+}
+left[0]=1
+   for(i=1;i<arrt6.length;i++){
+
+left[i]=left[i-1]*arrt6[i-1]
+
+   }
+for(i=0;i<arrt6.length;i++){
+
+ret[i]=right[i]*left[i]
+
+
+}
+
+console.log(ret)
+
+}
+
+
+   
+
+
+
+
+task6([1,2,3,4])
+
+
+
 
 
 
