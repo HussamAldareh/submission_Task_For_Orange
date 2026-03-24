@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Task 1</title>
+</head>
+<body>
+
+  <ul id="list">
+    <li>One</li>
+    <li id="target">Two</li>
+    <li>Three</li>
+  </ul>
+
+  <script>
+    let list = document.getElementById("list");
+
+    console.log("All children:");
+    console.log(list.children);
+
+
+    console.log("First child:");
+    console.log(list.firstElementChild);
+
+    console.log("Last child:");
+    console.log(list.lastElementChild);
+
+    let target = document.getElementById("target");
+
+    console.log("Previous sibling:");
+    console.log(target.previousElementSibling);
+
+    console.log("Next sibling:");
+    console.log(target.nextElementSibling);
+  </script>
+
+</body>
+</html>

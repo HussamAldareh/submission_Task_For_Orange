@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Card</title>
+</head>
+<body>
+
+<script>
+  let card = document.createElement("div");
+
+  let title = document.createElement("h2");
+  title.textContent = "iPhone 15";
+
+  
+  let desc = document.createElement("p");
+  desc.textContent = "A powerful smartphone with great camera.";
+
+  let img = document.createElement("img");
+  img.src = "#";
+  img.alt = "Product Image";
+
+  card.append(title, desc, img);
+
+  document.body.appendChild(card);
+</script>
+
+</body>
+</html>
