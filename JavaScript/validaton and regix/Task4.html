@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    small {
+      color: red;
+      font-size: 13px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(to right, #2b6cb0, #3182ce);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    #finalError {
+      text-align: center;
+      margin-top: 10px;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<form id="form">
+
+<h2>Register</h2>
+
+<input type="text" id="name" placeholder="First Name">
+<small id="nameError"></small>
+
+
+<input type="text" id="laname" placeholder=" Last Name">
+<small id="lanameError"></small>
+
+<input type="date" id="birth">
+<small id="birthError"></small>
+
+<input type="text" id="email" placeholder="Email">
+<small id="emailError"></small>
+
+<input type="text" id="confirmEmail" placeholder="Confirm Email">
+<small id="confirmEmailError"></small>
+
+<input type="password" id="password" placeholder="Password">
+<small id="passwordError"></small>
+
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+<small id="confirmPasswordError"></small>
+
+<button type="submit">Register</button>
+
+<p id="finalError"></p>
+
+</form>
+
+</div>
+
+<script>
+let form = document.getElementById("form")
+let name = document.getElementById("name")
+let laname=document.getElementById("laname")
+let birth = document.getElementById("birth")
+let email = document.getElementById("email")
+let confirmEmail = document.getElementById("confirmEmail")
+let password = document.getElementById("password")
+let confirmPassword = document.getElementById("confirmPassword")
+
+let namePattern = /^[a-zA-Z]+ [a-zA-Z]+$/
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+let passwordPattern = /^[A-Z](?=(?:.*\d){2,})(?=.*[^a-zA-Z0-9]).{8,32}$/
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault()
+
+  let valid = true
+
+  document.querySelectorAll("small").forEach(el => el.textContent = "")
+  document.getElementById("finalError").textContent = ""
+
+  if (name.value === "") {
+    nameError.textContent = "Name is required"
+    name.style.border = "1px solid red"
+    valid = false
+  } 
+  else if (!namePattern.test(name.value)) {
+    nameError.textContent = "Enter first & last name (letters only)"
+    name.style.border = "1px solid red"
+    valid = false
+  } else {
+    name.style.border = "1px solid green"
+  }
+
+
+if (laname.value === "") {
+    lanameError.textContent = "Name is required"
+    laname.style.border = "1px solid red"
+    valid = false
+  } 
+  else if (!namePattern.test(laname.value)) {
+    lanameError.textContent = "Enter first & last name (letters only)"
+    laname.style.border = "1px solid red"
+    valid = false
+  } else {
+    laname.style.border = "1px solid green"}
+
+
+
+
+  if (birth.value === "") {
+    birthError.textContent = "Please enter a valid date"
+    birth.style.border = "1px solid red"
+    valid = false
+  } else {
+    birth.style.border = "1px solid green"
+  }
+
+  if (email.value === "") {
+    emailError.textContent = "Email is required"
+    email.style.border = "1px solid red"
+    valid = false
+  } 
+  else if (!emailPattern.test(email.value)) {
+    emailError.textContent = "Invalid email"
+    email.style.border = "1px solid red"
+    valid = false
+  } else {
+    email.style.border = "1px solid green"
+  }
+
+  if (confirmEmail.value !== email.value) {
+    confirmEmailError.textContent = "Emails do not match"
+    confirmEmail.style.border = "1px solid red"
+    valid = false
+  } else {
+    confirmEmail.style.border = "1px solid green"
+  }
+
+  if (!passwordPattern.test(password.value)) {
+    passwordError.textContent =
+      "Start with capital, include 2 numbers, 1 special character, 8-32 chars"
+    password.style.border = "1px solid red"
+    valid = false
+  } else {
+    password.style.border = "1px solid green"
+  }
+
+  if (confirmPassword.value !== password.value) {
+    confirmPasswordError.textContent = "Passwords do not match"
+    confirmPassword.style.border = "1px solid red"
+    valid = false
+  } else {
+    confirmPassword.style.border = "1px solid green"
+  }
+
+  if (!valid) {
+    document.getElementById("finalError").textContent =
+      "Please fix the errors above to submit the form."
+  } else {
+    alert("Registered Successfully ")
+  }
+
+})
+</script>
+
+</body>
+</html>

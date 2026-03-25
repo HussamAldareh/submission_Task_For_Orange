@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    small { display: block; }
+  </style>
+</head>
+<body>
+
+<form id="form">
+  <h3>Validation Form</h3>
+
+  <input type="text" id="email" placeholder="Enter Email">
+  <small id="emailError"></small>
+
+  <input type="text" id="mobile" placeholder="Enter Mobile Number">
+  <small id="mobileError"></small>
+
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+let form = document.getElementById("form")
+
+let email = document.getElementById("email")
+let mobile = document.getElementById("mobile")
+
+let emailError = document.getElementById("emailError")
+let mobileError = document.getElementById("mobileError")
+
+
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+let mobilePattern = /^\d{10}$/
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault()
+
+  emailError.textContent = ""
+  mobileError.textContent = ""
+
+  let valid = true
+
+  if (email.value === "") {
+    emailError.textContent = "Email is required"
+    emailError.style.color = "red"
+    valid = false
+  } 
+  else if (!emailPattern.test(email.value)) {
+    emailError.textContent = "Invalid email format"
+    emailError.style.color = "red"
+    valid = false
+  }
+
+  if (mobile.value === "") {
+    mobileError.textContent = "Mobile is required"
+    mobileError.style.color = "red"
+    valid = false
+  } 
+  else if (!mobilePattern.test(mobile.value)) {
+    mobileError.textContent = "Must be exactly 10 digits"
+    mobileError.style.color = "red"
+    valid = false
+  }
+
+  if (valid) {
+    alert("Form Submitted Successfully ")
+  }
+
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div{text-align: center;
+            padding: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <form id="myform">
+    <h2>Basic info Form </h2>
+    <label>First Name</label>
+    <input  style=" margin-top: 10px;"  type="text"  id="fi" placeholder="Enter your first name" >
+    <small id="error"></small>
+
+    <br>
+    <label>Last Name</label>
+    <input style=" margin-top: 10px;" type="text" id="la" placeholder="Enter your Last name" >
+    <small id="error1"></small>
+
+    <br>
+    <label>Email</label>
+    <input style=" margin-top: 10px;" type="email" id="ema" placeholder="Enter your Email" >
+    <small id="error2"></small>
+
+    <br>
+
+    <button type="submit" style="background-color: blue; margin-top: 10px;" >  submit </button>
+
+    <hr>
+
+    <h4>Submit Data</h4>
+    <label>First Name :</label>
+
+    <label id="FI"></label><br>
+    <label>Last Name :</label>
+
+    <label id="La" ></label><br>
+    <label>Email :</label>
+
+    <label id="em"> </label><br>
+
+    </form>
+
+
+    </div>
+
+
+
+    <script>
+
+    const form=document.getElementById("myform")
+    form.addEventListener("submit",function(e){
+    const Finame=document.getElementById("fi").value
+    const laname=document.getElementById("la").value
+    const email=document.getElementById("ema").value
+    let FI=document.getElementById("FI")
+    let La=document.getElementById("La")
+    let em=document.getElementById("em")
+    let valid=true
+    let namePattern = /^[a-zA-Z]+$/
+    e.preventDefault();// prevent page reload
+
+
+    if(email==""){
+    error2.textContent="email is requierd"
+    error2.style.color="red";
+    valid=false
+
+    }
+    if(laname==""){
+    error1.textContent="Last Name is requierd "
+    error1.style.color="red";
+    valid=false
+
+    }
+    else if (!namePattern.test(laname)) {
+    error.textContent = "Only letters allowed"
+    }
+
+
+    if(Finame==""){
+    error.textContent="First Name is requierd "
+    error.style.color="red";
+    valid=false
+
+    }
+
+    else if (!namePattern.test(Finame)) {
+    error.textContent = "Only letters allowed"
+    }
+
+    if(valid){
+
+    FI.textContent = Finame
+        La.textContent = laname
+        em.textContent = email
+
+        
+    }
+
+
+    })
+
+    </script>
+
+
+    </body>
+    </html>

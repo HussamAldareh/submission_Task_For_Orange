@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="input" placeholder="Enter item">
+<button id="addBtn">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+  let input = document.getElementById("input")
+  let addBtn = document.getElementById("addBtn")
+  let list = document.getElementById("list")
+
+  addBtn.addEventListener("click", function() {
+    let text = input.value
+
+    if (text === "") return
+
+    let li = document.createElement("li")
+    li.textContent = text + " "
+
+    let delBtn = document.createElement("button")
+    delBtn.textContent = "Delete"
+    delBtn.classList.add("delete")
+
+    li.appendChild(delBtn)
+    list.appendChild(li)
+
+    input.value = ""
+  })
+
+  list.addEventListener("click", function(e) {
+
+    if (e.target.classList.contains("delete")) {
+      let li = e.target.parentElement
+      li.remove()
+    }
+
+  })
+</script>
+
+</body>
+</html>

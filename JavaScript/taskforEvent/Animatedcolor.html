@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+
+  transition: background-color 1s ease;
+}
+
+
+    </style>
+</head>
+<body>
+    
+
+
+<div id="box"></div>
+<button id="btn">Change Color</button>
+
+<script>
+
+
+
+    let box = document.getElementById("box")
+let btn = document.getElementById("btn")
+
+btn.addEventListener("click", function () {
+
+  box.style.backgroundColor = "blue"
+
+})
+</script>
+
+</body>
+</html>

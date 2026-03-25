@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<textarea id="te" placeholder="Enter Any thing" > </textarea>
+<button type="button" id="fontty"> Change font Type </button>
+<button type="button" id="Tbold"> Text bold </button>
+<button type="button" id="under"> add underline </button>
+
+<select id="FONTSize" >
+
+<option value="15px">15px</option>
+<option value="20px">20px</option>
+<option value="25px">25px</option>
+
+
+</select>
+
+<script>
+
+let te=document.getElementById("te")
+
+let fontty=document.getElementById("fontty")
+let Textbold=document.getElementById("Tbold")
+let under=document.getElementById("under")
+let FONTSize=document.getElementById("FONTSize")
+
+
+
+
+fontty.addEventListener("click",function(){
+
+    te.style.fontFamily="Times New Roman"
+
+})
+
+Textbold.addEventListener("click",function(){
+
+te.style.fontWeight="bold"
+})
+
+
+under.addEventListener("click",function(){
+
+te.style.textDecoration="underline"
+})
+
+FONTSize.addEventListener("change",function(){
+
+
+te.style.fontSize=this.value
+    
+
+
+}
+)
+
+
+
+</script>
+
+</body>
+</html>

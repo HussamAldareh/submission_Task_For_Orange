@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{text-align: center;
+        padding: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form id="myform">
+<h2>Basic info Form </h2>
+<label>First Name</label>
+<input  style=" margin-top: 10px;"  type="text"  id="fi" placeholder="Enter your first name" >
+ <br>
+<label>Last Name</label>
+<input style=" margin-top: 10px;" type="text" id="la" placeholder="Enter your Last name" >
+<br>
+<label>Email</label>
+<input style=" margin-top: 10px;" type="email" id="ema" placeholder="Enter your Email" >
+<br>
+
+<button type="submit" style="background-color: blue; margin-top: 10px;" >  submit </button>
+
+<hr>
+
+<h4>Submit Data</h4>
+<label>First Name :</label>
+
+<label id="FI"></label><br>
+<label>Last Name :</label>
+
+<label id="La" ></label><br>
+<label>Email :</label>
+
+<label id="em"> </label><br>
+
+</form>
+
+
+</div>
+
+
+
+<script>
+
+const form=document.getElementById("myform")
+form.addEventListener("submit",function(e){
+const Finame=document.getElementById("fi").value
+const laname=document.getElementById("la").value
+const email=document.getElementById("ema").value
+let FI=document.getElementById("FI")
+let La=document.getElementById("La")
+let em=document.getElementById("em")
+
+La.textContent=laname
+em.textContent=email
+FI.textContent=Finame
+e.preventDefault();// prevent page reload
+
+
+
+
+})
+
+</script>
+
+
+</body>
+</html>

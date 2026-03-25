@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<section id="di">
+
+<div>
+
+<h1>Hi </h1>
+
+
+</div>
+
+
+
+</section>
+
+<button type="button" id="btn" >Hid /show sec</button>
+
+
+
+<script>
+
+let sec=document.getElementById("di")
+let btn =document.getElementById("btn") 
+
+btn.addEventListener("click",function(e){
+ if (sec.style.display === "none") {
+    sec.style.display = "block"
+  } else {
+    sec.style.display = "none"
+  }
+
+
+})
+
+
+
+</script>
+
+</body>
+</html>

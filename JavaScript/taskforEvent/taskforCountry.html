@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="sel">
+      <option value="Jordan">Jordan</option>
+      <option value="Norway">Norway</option>
+      <option value="KSA">ksa</option>
+    </select>
+
+    <script>
+      let sel = document.getElementById("sel");
+      let img = document.createElement("img");
+      document.body.appendChild(img);
+      img.width=200
+      sel.addEventListener("change", function () {
+        if (sel.value == "Jordan") img.src = "jord.png";
+        else if (sel.value == "Norway") img.src = "Norway.png";
+        else if (sel.value == "KSA") img.src = "KSA.png";
+      });
+    </script>
+  </body>
+</html>
