@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+#cont{margin: auto;
+
+margin-left: 10%;
+border-radius: 1%;
+border: white 1px solid;
+background-color: #F3F7FA;
+width: 1150px;
+}
+
+#users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-left: 20px;
+
+margin-left:5px ;
+
+margin-bottom: 10px;
+}
+
+.user-card {
+  width: 180px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.user-card img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.user-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+
+#Titel{
+
+text-align: center;
+
+
+}
+
+#Task{
+
+margin: auto;
+background-color: #EEF2FB;
+border: 1px solid #F3F7FA ;
+  border-left: 5px solid #2C54D6;  /* هون الحل */
+margin-left: 24px;
+width: 1080px;
+margin-bottom: 50px;
+padding-left: 20px;
+}
+
+
+#divider {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+#divider::before,
+#divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+#divider span {
+  margin: 0 10px;
+  color: #626C88;
+  font-size: 14px;
+}
+
+.task-item::before {
+  content: "✔";
+  color: purple;
+  margin-right: 8px;
+}
+.task-title::before {
+  content: "📌";
+  margin-right: 8px;
+}
+h4 {
+  display: flex;
+  align-items: center;
+}
+
+h4::before {
+  content: "\f058"; 
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400; 
+  margin-right: 8px;
+  color: purple;
+}
+h4.h1::before {
+  color: blue;
+}
+</style>
+</head>
+<body>
+<section id="cont">
+
+
+
+
+<div id="Titel">
+
+<h2>             <i class="fa-brands fa-github"></i>
+  <span style="color: #2D0D3D;">  GitHub Users </span> <span style="color: #2C54D6;"> Viewer  </span></h2>
+
+<p style="color: #9099AA; font-size: 10px;">
+Fetch data from the GetHub API and display users dynamically
+</p>
+
+
+</div>
+
+<hr style="width: 100%; color: gray;">
+<div id="Task"  > <h3  class="task-title style="color: #111E3A ; border-left: #2C54D6; "> Your Task </h3>    
+
+<h4 class="h1">Fetch users from: <span style="color: blue;"> https://api.github.com/user</span> </h4>
+<h4 > Display each users avatar ,userName and profile link  </h4>
+<h4 >show the data inside beutifule user card (first 10 user )</h4>
+</div>
+
+<div id="loading" class="loading" style="margin-left: 50%; background-color: #2C54D6; ">Loading users...</div>
+
+<div id="divider">
+  <span>Users will appear here</span>
+</div>
+
+
+
+  <div id="users" ></div>
+
+
+
+</section>
+
+
+
+<script>
+
+let lod=document.getElementById("loading")
+let users=document.getElementById("users")
+
+
+
+fetch('https://api.github.com/users')
+.then(res=>res.json())
+.then(userList => {
+        lod.style.display = 'none';
+
+userList.slice(0,10).forEach(user => {
+ let div=document.createElement('div')
+    div.className="user-card"
+
+    div.innerHTML=`
+    
+  <img src="${user.avatar_url}" alt="$${user.login}" ><br>
+    <h3>${user.login}</h3>
+      <a href="${user.html_url}" target="_blank">View Profile
+            <i class="fa-brands fa-github"></i>
+
+        
+        </a>
+    `;
+              users.appendChild(div);
+});
+})
+.catch(err => {
+        lod.textContent = 'Failed to load users.';
+        console.error(err);
+      });
+
+</script>
+
+
+
+    
+</body>
+</html>
