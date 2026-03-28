@@ -139,13 +139,14 @@ Fetch data from the GetHub API and display users dynamically
 <h4 >show the data inside beutifule user card (first 10 user )</h4>
 </div>
 
-<div id="loading" class="loading" style="margin-left: 50%; background-color: #2C54D6; ">Loading users...</div>
+<div id="loading" class="loading" style="margin-left: 45%; background-color: #2C54D6;  width: 120px;">Loading users...</div>
 
 <div id="divider">
   <span>Users will appear here</span>
 </div>
 
 
+<input type="search" placeholder="search" style="margin-left: 25px; margin-bottom: 10px;" id="ser"> 
 
   <div id="users" ></div>
 
@@ -159,21 +160,22 @@ Fetch data from the GetHub API and display users dynamically
 
 let lod=document.getElementById("loading")
 let users=document.getElementById("users")
-
-
+let ser=document.getElementById("ser")
+let arr=[]
 
 fetch('https://api.github.com/users')
 .then(res=>res.json())
 .then(userList => {
-        lod.style.display = 'none';
+lod.style.display="none"
 
+arr=userList
 userList.slice(0,10).forEach(user => {
  let div=document.createElement('div')
     div.className="user-card"
 
     div.innerHTML=`
     
-  <img src="${user.avatar_url}" alt="$${user.login}" ><br>
+  <img src="${user.avatar_url}" alt="${user.login}" ><br>
     <h3>${user.login}</h3>
       <a href="${user.html_url}" target="_blank">View Profile
             <i class="fa-brands fa-github"></i>
@@ -183,12 +185,63 @@ userList.slice(0,10).forEach(user => {
     `;
               users.appendChild(div);
 });
+
+ser.addEventListener("input", function (e) {
+
+  let value = ser.value.trim().toLowerCase()
+  users.innerHTML = ""
+
+  if (value === "") {
+
+    arr.slice(0,10).forEach(user => {
+      let div = document.createElement('div')
+      div.className = "user-card"
+
+      div.innerHTML = `
+        <img src="${user.avatar_url}" alt="${user.login}" ><br>
+        <h3>${user.login}</h3>
+        <a href="${user.html_url}" target="_blank">
+          View Profile <i class="fa-brands fa-github"></i>
+        </a>
+      `
+
+      users.appendChild(div)
+    })
+
+  } else {
+
+    let res = arr.filter(user =>
+      user.login.toLowerCase().includes(value)
+    )
+
+    res.forEach(user => {
+      let div = document.createElement('div')
+      div.className = "user-card"
+
+      div.innerHTML = `
+        <img src="${user.avatar_url}" alt="${user.login}" ><br>
+        <h3>${user.login}</h3>
+        <a href="${user.html_url}" target="_blank">
+          View Profile <i class="fa-brands fa-github"></i>
+        </a>
+      `
+
+      users.appendChild(div)
+    })
+
+  }
+
+})
+
+
+
+
+
 })
 .catch(err => {
         lod.textContent = 'Failed to load users.';
         console.error(err);
       });
-
 </script>
 
 
