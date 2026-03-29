@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form>
+
+<input type="text"  id="name1" placeholder="Enter first Name">
+<input type="email" id="email" placeholder="Enter email">
+<button type="button">Save</button>
+</form>
+
+
+<script>
+
+let name1 = document.getElementById("name1")
+let email = document.getElementById("email")
+let save = document.querySelector("button")
+
+save.addEventListener("click",function() {
+   
+   name1.addEventListener("input", function() {
+    let value = name1.value;
+    localStorage.setItem("name1",JSON.stringify(value));
+});
+
+email.addEventListener("input", function() {
+    let value = email.value;
+    localStorage.setItem("email",JSON.stringify(value));
+});
+
+});
+   
+   
+
+window.onload = function() {
+    let storname= localStorage.getItem("name1");
+    let storemail= localStorage.getItem("email");
+    name1.value = JSON.parse(storname);
+    email.value = JSON.parse(storemail);
+
+    console.log(name1.value);
+    console.log(email.value);
+}
+
+</script>
+
+
+</body>
+</html>

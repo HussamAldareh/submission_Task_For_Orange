@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+.container {
+    width: 400px;
+    margin: 80px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+.search-box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer
+}
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+<form>
+<div class="search-box">
+<input type="search" id="search" class="search-box" placeholder="Search..."> 
+        <button id="clear" style="height:39px">Clear</button>
+
+</div>
+ <button type="button" id="save">Save</button>
+<br>
+<label>Results:</label>
+
+<div id="Res" >   
+
+<button type="button" id="del"  value="delet" >Delet</button>
+
+</div>
+
+
+</form>
+</div>
+
+
+
+    <script>
+const users= [
+  { name:"Ahmad" },
+  { name:"Ali" },
+  { name:"Sara" },
+{ name:"Lina" },
+{ name:"Omar" },
+{ name:"Huda" },
+    ]
+    let del=document.getElementById("del")
+let save=document.getElementById("save")
+let search = document.getElementById("search")
+let res = document.getElementById("Res")
+let user=localStorage.setItem("users",JSON.stringify(users))
+res.innerHTML=users.map(u => u.name).join("<br>")
+let storedUsers=localStorage.getItem("users")
+let parsedUsers=JSON.parse(storedUsers)
+let clear = document.getElementById("clear")
+clear.addEventListener("click", function() {
+    search.value = "";
+    res.innerHTML = "";
+    localStorage.removeItem("search");
+});
+search.addEventListener("input",function(){
+
+
+    let value = search.value.toLowerCase();
+
+ if(search.value=="")
+ {
+
+    res.innerHTML=""
+
+}
+
+let founduser =parsedUsers.filter(user => user.name.toLowerCase().includes(value))
+
+
+ if(founduser.length > 0)
+{
+
+        res.innerHTML = founduser.map(u => u.name).join("<br>");
+}
+
+else
+{   
+    res.innerHTML="Not Found"
+
+
+}
+
+})
+save.addEventListener("click", function() {
+    let value = search.value;
+    localStorage.setItem("search",JSON.stringify(value));
+
+})
+
+    
+window.onload = function () {
+    let storedSearch = localStorage.getItem("search");
+
+    if (storedSearch) {
+        let parsed = JSON.parse(storedSearch);
+        search.value = parsed;
+    }
+};
+
+del.addEventListener("click",function (){
+localStorage.removeItem("users")
+ 
+
+
+})
+function render(list) {
+    res.innerHTML = list.map((u, i) => `
+        <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        ">
+            <span>${u.name}</span>
+
+            <button onclick="deleteUser(${i})" style="
+                background: red;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 8px;
+                cursor: pointer;
+            ">
+                Delete
+            </button>
+        </div>
+    `).join("");
+}
+
+if(search.value==""){
+
+
+    
+}
+
+
+function deleteUser(index) {
+    parsedUsers.splice(index, 1); // حذف من array
+    localStorage.setItem("users", JSON.stringify(parsedUsers)); // تحديث التخزين
+    render(parsedUsers); // تحديث الشاشة
+}
+render(parsedUsers);
+</script>
+</body>
+</html>

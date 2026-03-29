@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form>
+
+<input type="text" id="num1" placeholder="Enter first Name">
+
+<button type="button" id="save"  >Save</button>
+</form> 
+<script>
+
+
+let num1 = document.getElementById("num1")
+
+let save = document.getElementById("save")
+
+save.addEventListener("click", function() {
+    let value = num1.value;
+    localStorage.setItem("num1",JSON.stringify(value));
+
+
+});
+window.onload = function() {
+    let stored = localStorage.getItem("num1");
+
+    if (stored) {
+        let parsedName = JSON.parse(stored);
+console.log(parsedName);
+    }
+}
+
+
+
+</script>
+
+
+</body>
+</html>
