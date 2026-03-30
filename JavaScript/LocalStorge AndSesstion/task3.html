@@ -90,35 +90,26 @@ clear.addEventListener("click", function() {
     res.innerHTML = "";
     localStorage.removeItem("search");
 });
-search.addEventListener("input",function(){
-
+search.addEventListener("input", function () {
 
     let value = search.value.toLowerCase();
 
- if(search.value=="")
- {
+    if (value === "") {
+        render(parsedUsers)
+        return;
+    }
 
-    res.innerHTML=""
+    let founduser = parsedUsers.filter(user =>
+        user.name.toLowerCase().includes(value)
+    );
 
-}
+    if (founduser.length > 0) {
+        render(founduser); 
+    } else {
+        res.innerHTML = "Not Found";
+    }
 
-let founduser =parsedUsers.filter(user => user.name.toLowerCase().includes(value))
-
-
- if(founduser.length > 0)
-{
-
-        res.innerHTML = founduser.map(u => u.name).join("<br>");
-}
-
-else
-{   
-    res.innerHTML="Not Found"
-
-
-}
-
-})
+});
 save.addEventListener("click", function() {
     let value = search.value;
     localStorage.setItem("search",JSON.stringify(value));
@@ -174,9 +165,9 @@ if(search.value==""){
 
 
 function deleteUser(index) {
-    parsedUsers.splice(index, 1); // حذف من array
-    localStorage.setItem("users", JSON.stringify(parsedUsers)); // تحديث التخزين
-    render(parsedUsers); // تحديث الشاشة
+    parsedUsers.splice(index, 1); 
+    localStorage.setItem("users", JSON.stringify(parsedUsers)); 
+    render(parsedUsers);
 }
 render(parsedUsers);
 </script>
